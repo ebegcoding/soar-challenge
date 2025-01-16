@@ -1,5 +1,4 @@
 import {
-  TablerIcon,
   IconHomeFilled,
   IconTransactionDollar,
   IconUserFilled,
@@ -10,13 +9,7 @@ import {
   IconBulbFilled,
   IconSettingsFilled,
 } from "@tabler/icons-react";
-
-type NavLinkItem = {
-  title: string;
-  icon: TablerIcon;
-  to: string;
-  end?: boolean;
-};
+import { NavLinkItem } from "./navbar.types";
 
 export const links: NavLinkItem[] = [
   {

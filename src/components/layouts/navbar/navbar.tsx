@@ -10,6 +10,8 @@ import {
 } from "./navbar.styles";
 
 import { IconIconsFilled } from "@tabler/icons-react";
+import { NavbarItemProps } from "./navbar.types";
+import { Header } from "../header";
 
 export const Navbar = () => {
   return (
@@ -21,20 +23,29 @@ export const Navbar = () => {
         </StyledLogo>
         <LayoutGroup>
           <StyledNavLinksContainer>
-            {links.map((item) => (
-              <StyledNavLink key={item.to} to={item.to} end={item.end}>
-                {({ isActive }) => (
-                  <>
-                    {isActive && <StyledActiveIndicator layoutId="indicator" />}
-                    <item.icon />
-                    {item.title}
-                  </>
-                )}
+            {links.map(({ to, end, ...item }) => (
+              <StyledNavLink key={to} to={to} end={end}>
+                {({ isActive }) => <NavbarItem isActive={isActive} {...item} />}
               </StyledNavLink>
             ))}
           </StyledNavLinksContainer>
         </LayoutGroup>
       </StyledContainer>
     </AppShell.Navbar>
+  );
+};
+
+const NavbarItem = ({ isActive, title, icon: Icon }: NavbarItemProps) => {
+  return (
+    <>
+      {isActive && (
+        <>
+          <Header.Title value={title} />
+          <StyledActiveIndicator layoutId="indicator" />
+        </>
+      )}
+      <Icon />
+      {title}
+    </>
   );
 };

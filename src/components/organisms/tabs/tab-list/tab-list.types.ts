@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, ReactNode } from "react";
+import { ButtonHTMLAttributes, CSSProperties, ReactNode } from "react";
 
 export type TabProps<T extends string> = {
   label: ReactNode;
@@ -10,4 +10,5 @@ export type TabProps<T extends string> = {
 
 export type TabListProps<T extends string> = {
   data: TabProps<T>[];
+  gap: CSSProperties["gap"];
 };

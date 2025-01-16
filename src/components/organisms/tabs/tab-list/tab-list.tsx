@@ -8,11 +8,11 @@ import {
 import { TabListProps, TabProps } from "./tab-list.types";
 import { LayoutGroup } from "framer-motion";
 
-export const TabList = <T extends string>({ data }: TabListProps<T>) => {
+export const TabList = <T extends string>({ data, gap }: TabListProps<T>) => {
   const { getId } = useTabsContext();
   return (
     <LayoutGroup id={getId("", "list")}>
-      <StyledContainer role="tablist" aria-orientation="horizontal">
+      <StyledContainer role="tablist" aria-orientation="horizontal" $gap={gap}>
         {data.map((item) => (
           <Tab key={item.value} {...item} />
         ))}
@@ -39,7 +39,6 @@ const Tab = <T extends string>({
 
   return (
     <StyledTab
-      $active={selected}
       disabled={disabled || parentDisabled}
       onClick={(e) => {
         onChange(value);
