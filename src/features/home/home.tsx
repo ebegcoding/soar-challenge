@@ -1,10 +1,13 @@
 import { AppShell } from "@/components/layouts";
 import { Outlet } from "react-router-dom";
+import { useResponsiveValue } from "@/hooks/use-responsive-value";
 
 export const Home = () => {
+  const headerHeight = useResponsiveValue({ base: "140px", tablet: "100px" });
+
   return (
     <AppShell
-      header={{ height: "100px" }}
+      header={{ height: headerHeight }}
       navbar={{ width: "250px" }}
       background="white"
       padding={{ x: "40px", y: "30px" }}

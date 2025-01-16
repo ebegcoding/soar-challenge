@@ -19,12 +19,12 @@ export const AppShell = ({
   return (
     <AppShellProvider value={privateKey}>
       <StyledContainer
-        borderColor={borderColor}
-        background={background}
-        zIndex={zIndex}
-        headerHeight={header?.height ?? 0}
-        navbarWidth={navbar?.width ?? 0}
-        padding={{
+        $borderColor={borderColor}
+        $background={background}
+        $zIndex={zIndex}
+        $headerHeight={header?.height ?? 0}
+        $navbarWidth={navbar?.width ?? 0}
+        $padding={{
           x: padding?.x ?? 0,
           y: padding?.y ?? 0,
         }}

@@ -14,13 +14,13 @@ export type AppShellProps = {
 };
 
 export type AppShellStyledProps = {
-  borderColor?: CSSProperties["borderColor"];
-  headerHeight: CSSProperties["height"];
-  navbarWidth: CSSProperties["width"];
-  padding: {
+  $borderColor?: CSSProperties["borderColor"];
+  $headerHeight: CSSProperties["height"];
+  $navbarWidth: CSSProperties["width"];
+  $padding: {
     x: CSSProperties["paddingInline"];
     y: CSSProperties["paddingBlock"];
   };
-  zIndex: number;
-  background?: CSSProperties["color"];
+  $zIndex: number;
+  $background?: CSSProperties["color"];
 };

@@ -36,21 +36,21 @@ export const StyledNavbar = styled.nav`
 `;
 
 export const StyledContainer = styled.div<AppShellStyledProps>`
-  --app-shell-header-height: ${(props) => props.headerHeight};
-  --app-shell-navbar-width: ${(props) => props.navbarWidth};
-  --app-shell-z-index: ${(props) => props.zIndex};
-  --app-shell-border-color: ${(props) => props.borderColor};
-  --app-shell-background: ${(props) => props.background};
-  --app-shell-padding-x: ${(props) => props.padding.x};
-  --app-shell-padding-y: ${(props) => props.padding.y};
+  --app-shell-header-height: ${(props) => props.$headerHeight};
+  --app-shell-navbar-width: ${(props) => props.$navbarWidth};
+  --app-shell-z-index: ${(props) => props.$zIndex};
+  --app-shell-border-color: ${(props) => props.$borderColor};
+  --app-shell-background: ${(props) => props.$background};
+  --app-shell-padding-x: ${(props) => props.$padding.x};
+  --app-shell-padding-y: ${(props) => props.$padding.y};
 
   ${StyledHeader} {
     border-bottom: ${(props) =>
-      props.borderColor ? "1px solid var(--app-shell-border-color)" : 0};
+      props.$borderColor ? "1px solid var(--app-shell-border-color)" : 0};
   }
 
   ${StyledNavbar} {
     border-inline-end: ${(props) =>
-      props.borderColor ? "1px solid var(--app-shell-border-color)" : 0};
+      props.$borderColor ? "1px solid var(--app-shell-border-color)" : 0};
   }
 `;
