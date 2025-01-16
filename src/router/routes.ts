@@ -1,6 +1,6 @@
 import { RouteObject } from "react-router-dom";
 
-export const routes: RouteObject[] = [
+export const routes = [
   {
     path: "/",
     async lazy() {
@@ -96,4 +96,4 @@ export const routes: RouteObject[] = [
       },
     ],
   },
-];
+] satisfies RouteObject[];

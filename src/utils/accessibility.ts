@@ -79,6 +79,7 @@ export function createScopedKeydownHandler({
         event.stopPropagation();
         event.preventDefault();
         elements[nextIndex].focus();
+        elements[nextIndex].click();
 
         break;
       }
@@ -87,6 +88,7 @@ export function createScopedKeydownHandler({
         event.stopPropagation();
         event.preventDefault();
         elements[previousIndex].focus();
+        elements[previousIndex].click();
 
         break;
       }

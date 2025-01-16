@@ -11,6 +11,9 @@ importers:
       '@reduxjs/toolkit':
         specifier: ^1.8.2
         version: 1.9.7(react-redux@8.1.3(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(redux@4.2.1))(react@18.3.1)
+      '@tabler/icons-react':
+        specifier: ^3.28.1
+        version: 3.28.1(react@18.3.1)
       '@types/styled-components':
         specifier: ^5.1.34
         version: 5.1.34
@@ -594,6 +597,14 @@ packages:
     engines: {node: '>=10'}
     peerDependencies:
       '@svgr/core': ^6.0.0
+
+  '@tabler/icons-react@3.28.1':
+    resolution: {integrity: sha512-KNBpA2kbxr3/2YK5swt7b/kd/xpDP1FHYZCxDFIw54tX8slELRFEf95VMxsccQHZeIcUbdoojmUUuYSbt/sM5Q==}
+    peerDependencies:
+      react: '>= 16'
+
+  '@tabler/icons@3.28.1':
+    resolution: {integrity: sha512-h7nqKEvFooLtFxhMOC1/2eiV+KRXhBUuDUUJrJlt6Ft6tuMw2eU/9GLQgrTk41DNmIEzp/LI83K9J9UUU8YBYQ==}
 
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -1837,6 +1848,13 @@ snapshots:
       svg-parser: 2.0.4
     transitivePeerDependencies:
       - supports-color
+
+  '@tabler/icons-react@3.28.1(react@18.3.1)':
+    dependencies:
+      '@tabler/icons': 3.28.1
+      react: 18.3.1
+
+  '@tabler/icons@3.28.1': {}
 
   '@types/babel__core@7.20.5':
     dependencies:

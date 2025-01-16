@@ -1,3 +1,4 @@
+import { UnstyledButton } from "@/components/atoms";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
@@ -7,7 +8,7 @@ export const StyledContainer = styled.div`
   align-items: center;
 `;
 
-export const StyledTab = styled.button<{ $active: boolean }>`
+export const StyledTab = styled(UnstyledButton)<{ $active: boolean }>`
   position: relative;
 `;
 

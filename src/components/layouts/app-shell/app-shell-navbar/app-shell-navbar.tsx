@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { useAppShellContext } from "../app-shell.context";
 import { StyledNavbar } from "../app-shell.styles";
+import { NavbarToggle } from "./components/navbar-toggle";
 
 export const AppShellNavbar = ({
   children,
@@ -9,5 +10,10 @@ export const AppShellNavbar = ({
 }) => {
   useAppShellContext();
 
-  return <StyledNavbar>{children}</StyledNavbar>;
+  return (
+    <StyledNavbar>
+      <NavbarToggle />
+      {children}
+    </StyledNavbar>
+  );
 };

@@ -23,6 +23,10 @@ export const AppShell = ({
         $background={background}
         $zIndex={zIndex}
         $headerHeight={header?.height ?? 0}
+        $headerPadding={{
+          x: header?.padding?.x ?? 0,
+          y: header?.padding?.y ?? 0,
+        }}
         $navbarWidth={navbar?.width ?? 0}
         $padding={{
           x: padding?.x ?? 0,

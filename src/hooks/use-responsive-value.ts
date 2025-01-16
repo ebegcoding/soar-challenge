@@ -1,6 +1,8 @@
+import { theme, Theme } from "@/theme/theme";
 import { useMediaQuery } from "./use-media-query";
+import { sprinkles } from "@/theme/sprinkles";
 
-type Breakpoint = "mobile" | "tablet" | "desktop";
+type Breakpoint = keyof Theme["breakpoints"];
 
 type ResponsiveValue<T> = Partial<Record<Breakpoint | "base", T>>;
 
@@ -36,17 +38,14 @@ const findLastIndex = <T>(array: T[], callback: (item: T) => boolean) => {
 };
 
 export function useResponsiveValue<T>(payload: ResponsiveValue<T>) {
-  const theme = {
-    breakpoints: { mobile: "456px", tablet: "768px", desktop: "1024px" },
-  };
   const mobileMatches = useMediaQuery(
-    `(min-width: ${theme.breakpoints.mobile})`
+    sprinkles.biggerThan("mobile")({ theme })
   );
   const tabletMatches = useMediaQuery(
-    `(min-width: ${theme.breakpoints.tablet})`
+    sprinkles.biggerThan("tablet")({ theme })
   );
   const desktopMatches = useMediaQuery(
-    `(min-width: ${theme.breakpoints.desktop})`
+    sprinkles.biggerThan("desktop")({ theme })
   );
 
   const breakpoints = [mobileMatches, tabletMatches, desktopMatches];
