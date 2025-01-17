@@ -1,11 +1,14 @@
 import { StyledContainer } from "./header.styles";
-import { Portal } from "@/components/atoms";
+import { Avatar, Portal } from "@/components/atoms";
 import { useDocumentTitle } from "@/hooks/use-document-title";
+import { useResponsiveValue } from "@/hooks/use-responsive-value";
 
-export const Header = ({ avatar }: { avatar: string }) => {
+export const Header = ({ avatar, name }: { avatar: string; name: string }) => {
+  const size = useResponsiveValue({ base: "35px", tablet: "60px" });
+
   return (
     <StyledContainer id="soar-header">
-      <div />
+      <Avatar src={avatar} size={size} username={name} />
     </StyledContainer>
   );
 };

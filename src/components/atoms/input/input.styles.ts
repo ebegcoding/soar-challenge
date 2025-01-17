@@ -72,3 +72,16 @@ export const StyledInput = styled.input`
     display: none;
   }
 `;
+
+export const HiddenInput = styled.input`
+  height: 0;
+  width: 0;
+  opacity: 0;
+  position: absolute;
+  overflow: hidden;
+  whitespace: nowrap;
+
+  &:focus:focus-visible + label {
+    outline: 2px solid ${({ theme }) => theme.colors.b50};
+  }
+`;

@@ -7,6 +7,7 @@ import { Button, DateInput, Input } from "@/components/atoms";
 import { ProfileFormData, ProfileFormSchema } from "./profile.constants";
 import { useExtendedForm } from "@/hooks/use-extended-form";
 import { StyledForm, StyledFormInputs } from "./profile.styles";
+import { ImageInput } from "@/components/molecules";
 
 export const Profile = () => {
   const { data, isFetching } = useGetProfileQuery();
@@ -30,6 +31,12 @@ export const Profile = () => {
           await updateMutation(body);
         })}
       >
+        <FormItem
+          control={form.control}
+          name="avatar"
+          component={ImageInput}
+          size="100px"
+        />
         <StyledFormInputs>
           <FormItem
             control={form.control}

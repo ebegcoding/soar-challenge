@@ -47,7 +47,7 @@ export const Home = () => {
       padding={padding}
       borderColor="#E6EFF5"
     >
-      <Header avatar={data.avatar} />
+      <Header avatar={data.avatar} name={data.name} />
       <Navbar />
       <AppShell.Main>
         <Outlet />
