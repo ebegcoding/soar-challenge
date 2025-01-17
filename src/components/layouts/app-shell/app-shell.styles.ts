@@ -10,9 +10,7 @@ export const StyledNavbarToggle = styled(UnstyledButton)`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: calc(var(--app-shell-navbar-toggle-size) * 2);
-    height: calc(var(--app-shell-navbar-toggle-size) * 2);
-    border-radius: calc(var(--app-shell-navbar-toggle-size) * 2);
+    ${sprinkles.circle("var(--app-shell-navbar-toggle-size)")}
     margin-left: var(--app-shell-header-padding-x);
     margin-top: var(--app-shell-header-padding-y);
   }
@@ -45,6 +43,9 @@ export const StyledHeader = styled.header`
 `;
 
 export const StyledNavbar = styled.nav`
+  --app-shell-navbar-toggle-offset: calc(
+    var(--app-shell-navbar-toggle-size) / 2
+  );
   position: fixed;
   inset-block: 0;
   inset-inline-start: 0;
@@ -55,13 +56,13 @@ export const StyledNavbar = styled.nav`
   @media screen and ${sprinkles.smallerThan("tablet")} {
     transition: clip-path 500ms;
     clip-path: circle(
-      var(--app-shell-navbar-toggle-size) at
+      var(--app-shell-navbar-toggle-offset) at
         calc(
-          var(--app-shell-navbar-toggle-size) +
+          var(--app-shell-navbar-toggle-offset) +
             var(--app-shell-header-padding-x)
         )
         calc(
-          var(--app-shell-navbar-toggle-size) +
+          var(--app-shell-navbar-toggle-offset) +
             var(--app-shell-header-padding-y)
         )
     );
@@ -81,7 +82,7 @@ export const StyledNavbar = styled.nav`
 `;
 
 export const StyledContainer = styled.div<AppShellStyledProps>`
-  --app-shell-navbar-toggle-size: 20px;
+  --app-shell-navbar-toggle-size: 40px;
   --app-shell-header-height: ${(props) => props.$headerHeight};
   --app-shell-navbar-offset: ${(props) => props.$navbarWidth};
   --app-shell-navbar-width: ${(props) => props.$navbarWidth};

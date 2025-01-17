@@ -1,3 +1,4 @@
+import { sprinkles } from "@/theme/sprinkles";
 import styled from "styled-components";
 
 export const StyledContainer = styled.div`
@@ -23,9 +24,7 @@ export const StyledContainer = styled.div`
 
     button {
       pointer-events: none;
-      width: 30px;
-      height: 30px;
-      border-radius: 30px;
+      ${sprinkles.circle("30px")};
       padding: 0;
       display: flex;
       align-items: center;

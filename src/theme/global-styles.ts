@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { sprinkles } from "./sprinkles";
 
 export const GlobalStyles = createGlobalStyle(
   ({ theme }) => `
@@ -78,6 +79,28 @@ export const GlobalStyles = createGlobalStyle(
 
     button:focus {
         outline: none;
+    }
+
+    @media screen and ${sprinkles.smallerThan("mobile")({ theme })} {
+        h1 {
+            font-size: 20px;
+            line-height: 24px;
+        }
+
+        h2 {
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+        label {
+            font-size: 13px;
+            line-height: 16px; 
+        }
+
+        input {
+            font-size: 12px;
+            line-height: 15px; 
+        }
     }
 `
 );

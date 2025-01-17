@@ -1,4 +1,4 @@
-import { ReactNode, useRef } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 export const Portal = ({
@@ -8,13 +8,19 @@ export const Portal = ({
   children: NonNullable<ReactNode>;
   target: HTMLElement | string;
 }) => {
-  const nodeRef = useRef(
-    typeof target === "string" ? document.querySelector(target) : target
-  );
+  const [node, setNode] = useState<Element | null>(null);
 
-  if (!nodeRef.current) {
+  useEffect(() => {
+    if (typeof target === "string") {
+      setNode(document.querySelector(target));
+    } else {
+      setNode(target);
+    }
+  }, [target]);
+
+  if (!node) {
     return null;
   }
 
-  return createPortal(children, nodeRef.current);
+  return createPortal(children, node);
 };
