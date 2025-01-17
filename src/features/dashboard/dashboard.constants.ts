@@ -33,3 +33,5 @@ export const monthsMap = {
   "11": "Nov",
   "12": "Dec",
 };
+
+export const daysArray = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];

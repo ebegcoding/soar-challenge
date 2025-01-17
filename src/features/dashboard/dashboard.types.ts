@@ -1,4 +1,7 @@
-import { TransactionType } from "@/interfaces/transactions";
+import {
+  TransactionDirection,
+  TransactionType,
+} from "@/interfaces/transactions";
 
 export type ContactApiRequestQuery = {
   limit: number;
@@ -17,3 +20,7 @@ export type BalanceProgression = {
 };
 
 export type ExpenseStatsApiResponse = Record<TransactionType, number>;
+
+export type WeeklyActivity = {
+  days: string[];
+} & Record<TransactionDirection, number[]>;
