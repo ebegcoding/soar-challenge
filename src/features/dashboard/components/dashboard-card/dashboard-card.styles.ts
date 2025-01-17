@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export const StyledContainer = styled.div<{
   $area: string;
-  $minHeight: string;
+  $minHeight?: string;
 }>`
   grid-area: ${(props) => props.$area};
   display: flex;

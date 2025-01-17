@@ -8,7 +8,7 @@ export const DashboardCard = ({
   children,
   minHeight,
 }: {
-  minHeight: string;
+  minHeight?: string;
   area: string;
   title: string;
   children: NonNullable<ReactNode>;
