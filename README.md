@@ -1,50 +1,26 @@
-# React + TypeScript + Vite
+# About
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Two repos for this challenge:
 
-Currently, two official plugins are available:
+- [web application](https://github.com/ebegcoding/soar-challenge)
+- [json server](https://github.com/ebegcoding/soar-json-server)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Vercel live:
 
-## Expanding the ESLint configuration
+- [demo](https://soar-challenge-five.vercel.app/)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+# Setup locally
 
-- Configure the top-level `parserOptions` property like this:
+Very easy to setup locally. Simply follow below steps:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. Create `.env.local` in root dir and copy `.env.local.template` contents to the created file.
+2. run `pnpm install` to install dependencies
+3. run `pnpm dev` to run the project locally
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+# Assumptions
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. This web app uses json server for a more realistic feeling of an interactive web app. Json server is deployed in vercel, the db will reset everytime there is a new deployment to [json server repo](https://github.com/ebegcoding/soar-json-server)
+2. You can run the app with local json server, if you clone [json server repo](https://github.com/ebegcoding/soar-json-server) and update `VITE_BACKEND_URL` env var. However, it works just fine with the json server deployed in vercel.
+3. I used `@tabler/icons-react` for icons in this web app, just for speed and time reasons. However, `vite-plugin-svgr` plugin is installed and setup, so it is just fine and supports to use inline svg imported as `ReactComponent`, if I would have imported assets from figma.
+4. No components or design system lib was used intentionally, I rather created everything myself, just to expose css, accessibility and development skills.
+5. Intentionally did not put too much effort into customizing charts ui to match figma.
