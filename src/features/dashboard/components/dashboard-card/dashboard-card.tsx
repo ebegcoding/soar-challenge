@@ -14,7 +14,7 @@ export const DashboardCard = ({
   return (
     <StyledContainer $area={area}>
       <h2>{title}</h2>
-      <Paper $padding={{ x: "25px", y: "25px" }}>{children}</Paper>
+      <Paper $padding={{ x: "18px", y: "20px" }}>{children}</Paper>
     </StyledContainer>
   );
 };
