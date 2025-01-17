@@ -69,7 +69,6 @@ export const GlobalStyles = createGlobalStyle(
         font-size: 15px;
         line-height: 18px;
         font-weight: ${theme.font.weights.light};
-        color: ${theme.colors.b50};
 
         &::placeholder {
             color: ${theme.colors.b10};

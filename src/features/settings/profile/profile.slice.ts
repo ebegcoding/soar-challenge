@@ -21,4 +21,5 @@ const extendedApiSlice = apiSlice.injectEndpoints({
   }),
 });
 
-export const { useGetProfileQuery } = extendedApiSlice;
+export const { useGetProfileQuery, useUpdateProfileMutation } =
+  extendedApiSlice;

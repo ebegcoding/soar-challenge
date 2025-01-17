@@ -105,13 +105,7 @@ export const StyledContainer = styled.div<AppShellStyledProps>`
   }
 
   @media screen and ${sprinkles.smallerThan("tablet")} {
-    --app-shell-navbar-offset: 0;
-
-    @media screen and ${sprinkles.biggerThan("mobile")} {
-      &:has(${StyledNavbar} ${StyledNavbarToggle}[aria-selected="true"]) {
-        --app-shell-navbar-offset: var(--app-shell-navbar-width);
-      }
-    }
+    --app-shell-navbar-offset: 0px;
   }
 
   @media screen and ${sprinkles.smallerThan("mobile")} {

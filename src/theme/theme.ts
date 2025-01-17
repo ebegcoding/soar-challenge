@@ -8,6 +8,9 @@ export const theme = {
     b0: "#FFFFFF",
     dimmed: "#B1B1B1",
     border: "#DFEAF2",
+    success: "#41D4A8",
+    error: "#FF4B4A",
+    accent: "#396AFF",
   },
   font: {
     weights: {
