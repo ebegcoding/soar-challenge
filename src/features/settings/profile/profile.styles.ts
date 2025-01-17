@@ -2,6 +2,27 @@ import { sprinkles } from "@/theme/sprinkles";
 import styled from "styled-components";
 
 export const StyledForm = styled.form`
+  margin-left: 30px;
+  display: flex;
+  justify-content: center;
+  column-gap: 65px;
+  row-gap: 22px;
+  flex-wrap: wrap;
+
+  input:not([type="file"]) {
+    min-width: 150px;
+  }
+
+  @media screen and ${sprinkles.smallerThan("mobile")} {
+    margin-left: 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+  }
+`;
+
+export const StyledFormInputsContainer = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -13,6 +34,7 @@ export const StyledForm = styled.form`
 
   @media screen and ${sprinkles.smallerThan("mobile")} {
     gap: 16px;
+    width: 100%;
 
     > button[type="submit"] {
       margin-left: 0;

@@ -78,8 +78,12 @@ export const HiddenInput = styled.input`
   width: 0;
   opacity: 0;
   position: absolute;
-  overflow: hidden;
+  overflow: hidden !important;
   whitespace: nowrap;
+
+  + label {
+    display: flex;
+  }
 
   &:focus:focus-visible + label {
     outline: 2px solid ${({ theme }) => theme.colors.b50};

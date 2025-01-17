@@ -33,7 +33,12 @@ export const ImageInput = ({
         multiple={false}
         {...props}
       >
-        <Button type="button" icon={IconEdit} />
+        <Button
+          disabled={props.disabled}
+          tabIndex={-1}
+          type="button"
+          icon={IconEdit}
+        />
       </FileInput>
     </StyledContainer>
   );
