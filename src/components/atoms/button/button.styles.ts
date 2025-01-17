@@ -42,6 +42,10 @@ export const StyledButton = styled.button`
     }
   }
 
+  svg {
+    flex-shrink: 0;
+  }
+
   @media screen and ${sprinkles.smallerThan("mobile")} {
     height: 40px;
     font-size: 15px;

@@ -1,3 +1,5 @@
+import { SortQueryParams } from "./api";
+
 export enum TransactionDirection {
   INCOMING = "INCOMING",
   OUTGOING = "OUTGOING",
@@ -23,5 +25,6 @@ export type TransactionInput = Pick<Transaction, "title" | "amount" | "type">;
 
 export type TransactionApiRequestQuery = {
   limit: number;
-  sort?: keyof Transaction | `-${keyof Transaction}`;
+  sort?: keyof Transaction;
+  order?: SortQueryParams["_order"];
 };

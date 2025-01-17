@@ -1,4 +1,4 @@
-import { TransactionType } from "../transactions/transactions.types";
+import { TransactionType } from "@/interfaces/transactions";
 
 export type ContactApiRequestQuery = {
   limit: number;

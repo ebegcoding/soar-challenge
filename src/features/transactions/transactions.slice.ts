@@ -5,7 +5,7 @@ import {
   TransactionApiRequestQuery,
   TransactionDirection,
   TransactionInput,
-} from "./transactions.types";
+} from "@/interfaces/transactions";
 import { PaginatedQueryParams, SortQueryParams } from "@/interfaces/api";
 
 const extendedApiSlice = apiSlice.injectEndpoints({
@@ -14,20 +14,21 @@ const extendedApiSlice = apiSlice.injectEndpoints({
       Transaction[] | undefined,
       TransactionApiRequestQuery
     >({
-      query: ({ limit, sort }) => ({
+      query: ({ limit, sort, order }) => ({
         url: "transactions",
         params: {
           _page: 1,
           _limit: limit,
           _sort: sort,
+          _order: order,
         } satisfies PaginatedQueryParams & SortQueryParams,
       }),
       providesTags: [RTKQueryTag.TRANSACTIONS],
     }),
     createOutgoingTransaction: builder.mutation<void, TransactionInput>({
       query: (body) => ({
-        url: "profile",
-        method: "PATCH",
+        url: "transactions",
+        method: "POST",
         body: {
           ...body,
           date: new Date().toISOString(),

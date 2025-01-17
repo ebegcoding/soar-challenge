@@ -12,7 +12,7 @@ import {
   Transaction,
   TransactionDirection,
   TransactionType,
-} from "../transactions/transactions.types";
+} from "@/interfaces/transactions";
 
 const extendedApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({

@@ -5,4 +5,5 @@ export type PaginatedQueryParams = {
 
 export type SortQueryParams = {
   _sort?: string;
+  _order?: "DESC" | "ASC";
 };
