@@ -1,7 +1,7 @@
 import { apiSlice } from "@/app/api";
 import { RTKQueryTag } from "@/constants/rtk";
 
-import { PaginatedQueryParams } from "@/interfaces/api";
+import { PaginatedQueryParams, SortQueryParams } from "@/interfaces/api";
 import {
   BalanceProgression,
   Contact,
@@ -13,6 +13,7 @@ import {
   TransactionDirection,
   TransactionType,
 } from "@/interfaces/transactions";
+import { monthsMap } from "./dashboard.constants";
 
 const extendedApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
@@ -33,8 +34,18 @@ const extendedApiSlice = apiSlice.injectEndpoints({
     >({
       query: () => ({
         url: "balanceProgression",
+        params: {
+          _sort: "month",
+          _order: "ASC",
+        } satisfies SortQueryParams,
       }),
       providesTags: [RTKQueryTag.BALANCE_PROGRESSION],
+      transformResponse: (response: BalanceProgression[]) =>
+        response.map(({ month, value }) => {
+          const _month = month.split("-")[1] as keyof typeof monthsMap;
+
+          return { value, month: monthsMap[_month] };
+        }),
     }),
 
     getWeeklyActivity: builder.query<Transaction[] | undefined, void>({

@@ -4,25 +4,7 @@ import { useGetExpenseStatsQuery } from "../../dashboard.slice";
 import { useEcharts, UseEchartsOpts } from "@/hooks/use-echarts";
 import { useMemo } from "react";
 import { TransactionType } from "@/interfaces/transactions";
-
-const variants = {
-  [TransactionType.BILL]: {
-    name: "Bills",
-    color: "#343C6A",
-  },
-  [TransactionType.ENT]: {
-    name: "Enterntainment",
-    color: "#FC7900",
-  },
-  [TransactionType.INVESTMENT]: {
-    name: "Investments",
-    color: "#396AFF",
-  },
-  [TransactionType.OTHER]: {
-    name: "Others",
-    color: "#232323",
-  },
-} satisfies Record<TransactionType, { name: string; color: string }>;
+import { expenseVariants } from "../../dashboard.constants";
 
 export const ExpensesCard = () => {
   const minHeight = useResponsiveValue({ base: "240px", mobile: "320px" });
@@ -33,10 +15,10 @@ export const ExpensesCard = () => {
     return {
       opts: {
         color: [
-          variants[TransactionType.ENT].color,
-          variants[TransactionType.BILL].color,
-          variants[TransactionType.INVESTMENT].color,
-          variants[TransactionType.OTHER].color,
+          expenseVariants[TransactionType.ENT].color,
+          expenseVariants[TransactionType.BILL].color,
+          expenseVariants[TransactionType.INVESTMENT].color,
+          expenseVariants[TransactionType.OTHER].color,
         ],
         series: data
           ? [
@@ -47,19 +29,19 @@ export const ExpensesCard = () => {
                 data: [
                   {
                     value: data[TransactionType.ENT],
-                    name: variants[TransactionType.ENT].name,
+                    name: expenseVariants[TransactionType.ENT].name,
                   },
                   {
                     value: data[TransactionType.BILL],
-                    name: variants[TransactionType.BILL].name,
+                    name: expenseVariants[TransactionType.BILL].name,
                   },
                   {
                     value: data[TransactionType.INVESTMENT],
-                    name: variants[TransactionType.INVESTMENT].name,
+                    name: expenseVariants[TransactionType.INVESTMENT].name,
                   },
                   {
                     value: data[TransactionType.OTHER],
-                    name: variants[TransactionType.OTHER].name,
+                    name: expenseVariants[TransactionType.OTHER].name,
                   },
                 ],
                 itemStyle: {
