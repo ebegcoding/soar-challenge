@@ -1,22 +1,24 @@
-import { VirtualizedList, VirtualizedListFooter } from "@/components/organisms";
+import {
+  CreditCard,
+  VirtualizedList,
+  VirtualizedListFooter,
+} from "@/components/organisms";
 import { useFetchMore } from "@/hooks/use-fetch-more";
 import { useCallback } from "react";
 import { useGetCardsQuery } from "@/features/cards/cards.slice";
 import { StyledCardHeader, StyledContainer } from "./credit-cards-card.styles";
 import { Link } from "react-router-dom";
+import { useResponsiveValue } from "@/hooks/use-responsive-value";
 
 export const CreditCardsCard = () => {
+  const height = useResponsiveValue({ base: "170px", mobile: "235px" });
   const [limit, setLimit] = useFetchMore(4);
 
-  const { data = [], isFetching, isLoading } = useGetCardsQuery({ limit });
+  const { data = [], isFetching } = useGetCardsQuery({ limit });
 
   const handleFetchMore = useCallback(() => {
     setLimit(data.length);
   }, [data.length]);
-
-  if (isLoading) {
-    return <div>Loading</div>;
-  }
 
   return (
     <StyledContainer>
@@ -25,12 +27,13 @@ export const CreditCardsCard = () => {
         <Link to="/cards">See all</Link>
       </StyledCardHeader>
       <VirtualizedList
-        style={{ height: 100 }}
+        gap="30px"
+        style={{ height }}
         horizontalDirection
         stateKey="contacts"
         data={data}
         context={{ loading: isFetching }}
-        itemContent={(_index, data) => data.cardNumber}
+        itemContent={(_index, data) => <CreditCard {...data} />}
         endReached={handleFetchMore}
         components={{ Footer: VirtualizedListFooter }}
       />

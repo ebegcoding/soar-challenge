@@ -1,6 +1,6 @@
 import { apiSlice } from "@/app/api";
 import { RTKQueryTag } from "@/constants/rtk";
-import { Card, CardApiRequestQuery } from "./cards.types";
+import { Card, CardApiRequestQuery } from "@/interfaces/cards";
 import { PaginatedQueryParams } from "@/interfaces/api";
 import { produce } from "immer";
 

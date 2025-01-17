@@ -7,22 +7,22 @@ import { useCallback } from "react";
 export const TransactionsCard = () => {
   const [limit, setLimit] = useFetchMore(5);
 
-  const {
-    data = [],
-    isFetching,
-    isLoading,
-  } = useGetTransactionsQuery({ limit, sort: "date", order: "DESC" });
+  const { data = [], isFetching } = useGetTransactionsQuery({
+    limit,
+    sort: "date",
+    order: "DESC",
+  });
 
   const handleFetchMore = useCallback(() => {
     setLimit(data.length);
   }, [data.length]);
 
-  if (isLoading) {
-    return <div>Loading</div>;
-  }
-
   return (
-    <DashboardCard title="Recent Transactions" area="transactions">
+    <DashboardCard
+      title="Recent Transactions"
+      area="transactions"
+      minHeight="214px"
+    >
       <TransactionsList
         data={data}
         loading={isFetching}

@@ -30,15 +30,11 @@ export const ContactsCard = () => {
 
   const [mutation, mutationState] = useCreateOutgoingTransactionMutation();
 
-  const { data = [], isFetching, isLoading } = useGetContactsQuery({ limit });
+  const { data = [], isFetching } = useGetContactsQuery({ limit });
 
   const handleFetchMore = useCallback(() => {
     setLimit(data.length);
   }, [data.length]);
-
-  if (isLoading) {
-    return <div>Loading</div>;
-  }
 
   return (
     <FormProvider {...form}>

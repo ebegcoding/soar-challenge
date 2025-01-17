@@ -29,3 +29,4 @@ Very easy to setup locally. Simply follow below steps:
 7. No util or hooks lib were used for the same reason as above.
 8. Lists are paginated in the server and also virtualized in the frontend for best performance.
 9. Intentionally did not put too much effort into customizing charts ui to match figma.
+10. Did not create a typography component, ideally a typography component is needed to reduce duplicated css styles and responsiveness.
