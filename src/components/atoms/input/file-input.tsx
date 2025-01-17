@@ -5,6 +5,8 @@ interface FileInputOwnProps<Multiple extends boolean = false> {
   children: React.ReactNode;
   multiple?: Multiple;
   name: string;
+  labelId?: never;
+  error?: never;
 }
 
 export type FileInputProps<T extends boolean> = FileInputOwnProps<T> &
@@ -15,6 +17,8 @@ export const FileInput = <T extends boolean>({
   onChange,
   multiple,
   children,
+  labelId,
+  error,
   ...props
 }: FileInputProps<T>) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,12 +29,12 @@ export const FileInput = <T extends boolean>({
     }
   };
 
-  const labelId = `${name}-label`;
+  const _labelId = `${name}-label`;
 
   return (
     <>
       <HiddenInput
-        aria-describedby={labelId}
+        aria-describedby={_labelId}
         type="file"
         multiple={multiple}
         onChange={handleChange}
@@ -38,7 +42,7 @@ export const FileInput = <T extends boolean>({
         id={name}
         {...props}
       />
-      <label id={labelId} htmlFor={name}>
+      <label id={_labelId} htmlFor={name}>
         {children}
       </label>
     </>

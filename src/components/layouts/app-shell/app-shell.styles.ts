@@ -27,6 +27,7 @@ export const StyledMain = styled.main`
   );
   padding-bottom: var(--app-shell-padding-y);
   min-height: 100dvh;
+  min-width: fit-content;
 `;
 
 export const StyledHeader = styled.header`

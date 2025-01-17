@@ -70,5 +70,9 @@ const extendedApiSlice = apiSlice.injectEndpoints({
   }),
 });
 
-export const { useGetBalanceProgressionQuery, useGetContactsQuery } =
-  extendedApiSlice;
+export const {
+  useGetBalanceProgressionQuery,
+  useGetContactsQuery,
+  useGetExpenseStatsQuery,
+  useGetWeeklyActivityQuery,
+} = extendedApiSlice;

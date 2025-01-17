@@ -1,7 +1,9 @@
 import {
+  ActivityCard,
+  BalanceCard,
   ContactsCard,
   CreditCardsCard,
-  DashboardCard,
+  ExpensesCard,
   TransactionsCard,
 } from "./components";
 import { StyledContainer } from "./dashboard.styles";
@@ -11,16 +13,10 @@ export const Dashboard = () => {
     <StyledContainer>
       <CreditCardsCard />
       <TransactionsCard />
-      <DashboardCard title="Weekly Activity" area="activity">
-        activity
-      </DashboardCard>
-      <DashboardCard title="Expense Statistics" area="expenses">
-        expenses
-      </DashboardCard>
+      <ActivityCard />
+      <ExpensesCard />
       <ContactsCard />
-      <DashboardCard title="Balance History" area="balance">
-        balance
-      </DashboardCard>
+      <BalanceCard />
     </StyledContainer>
   );
 };

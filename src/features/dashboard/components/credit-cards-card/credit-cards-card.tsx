@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import { useResponsiveValue } from "@/hooks/use-responsive-value";
 
 export const CreditCardsCard = () => {
-  const height = useResponsiveValue({ base: "170px", mobile: "235px" });
+  const height = useResponsiveValue({ base: "200px", mobile: "235px" });
   const [limit, setLimit] = useFetchMore(4);
 
   const { data = [], isFetching } = useGetCardsQuery({ limit });
