@@ -16,6 +16,7 @@ Very easy to setup locally. Simply follow below steps:
 1. Create `.env.local` in root dir and copy `.env.local.template` contents to the created file.
 2. run `pnpm install` to install dependencies
 3. run `pnpm dev` to run the project locally
+4. enjoy
 
 # Assumptions
 
@@ -23,4 +24,5 @@ Very easy to setup locally. Simply follow below steps:
 2. You can run the app with local json server, if you clone [json server repo](https://github.com/ebegcoding/soar-json-server) and update `VITE_BACKEND_URL` env var. However, it works just fine with the json server deployed in vercel.
 3. I used `@tabler/icons-react` for icons in this web app, just for speed and time reasons. However, `vite-plugin-svgr` plugin is installed and setup, so it is just fine and supports to use inline svg imported as `ReactComponent`, if I would have imported assets from figma.
 4. No components or design system lib was used intentionally, I rather created everything myself, just to expose css, accessibility and development skills.
-5. Intentionally did not put too much effort into customizing charts ui to match figma.
+5. No util or hooks lib were used for the same reason as above.
+6. Intentionally did not put too much effort into customizing charts ui to match figma.

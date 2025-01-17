@@ -24,17 +24,11 @@ export const routes = [
       },
       {
         path: "accounts",
-        async lazy() {
-          const { Accounts } = await import("@/features/accounts");
-          return { Component: Accounts };
-        },
+        Component: () => <div>Accounts</div>,
       },
       {
         path: "investments",
-        async lazy() {
-          const { Investments } = await import("@/features/investments");
-          return { Component: Investments };
-        },
+        Component: () => <div>Investments</div>,
       },
       {
         path: "cards",
@@ -45,24 +39,15 @@ export const routes = [
       },
       {
         path: "loans",
-        async lazy() {
-          const { Loans } = await import("@/features/loans");
-          return { Component: Loans };
-        },
+        Component: () => <div>Loans</div>,
       },
       {
         path: "services",
-        async lazy() {
-          const { Services } = await import("@/features/services");
-          return { Component: Services };
-        },
+        Component: () => <div>Services</div>,
       },
       {
         path: "privileges",
-        async lazy() {
-          const { Privileges } = await import("@/features/privileges");
-          return { Component: Privileges };
-        },
+        Component: () => <div>Privileges</div>,
       },
       {
         path: "settings",
